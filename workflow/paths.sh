@@ -6,7 +6,7 @@ NIMCLI_DIR="${ORIG}/../reference/nim/proof_input/"
 PTAU_DIR="${ORIG}/../ceremony"
 
 CIRCUIT_ROOT="${ORIG}/../circuit/"
-CIRCUIT_PRF_DIR="${CIRCUIT_ROOT}/archivist/"
+CIRCUIT_PRF_DIR="${CIRCUIT_ROOT}/promethei/"
 CIRCUIT_POS_DIR="${CIRCUIT_ROOT}/poseidon2/"
 CIRCUIT_LIB_DIR="${CIRCUIT_ROOT}/lib/"
 

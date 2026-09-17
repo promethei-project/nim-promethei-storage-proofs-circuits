@@ -6,11 +6,11 @@ See the [README in the parent dir](../README.md) for the (draft) specification.
 
 ### Organization of the circuit code
 
-- `archivist` - the storage proof circuit
+- `promethei` - the storage proof circuit
 - `poseidon2` - Poseidon2 hash function
 - `lib` - general purpose, reusable circom templates ("circuit library")
 
-In `archivist`:
+In `promethei`:
 
 - `sample_cells.circom` - compute cell indices to sample, and prove those cells
 - `single_cell.circom` - prove a single cell

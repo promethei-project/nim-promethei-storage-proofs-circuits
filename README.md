@@ -1,8 +1,8 @@
 
-Archivist Storage Proofs for the MVP
+Promethei Storage Proofs for the MVP
 ================================
 
-This document describes the storage proof system for the Archivist 2023 Q4 MVP.
+This document describes the storage proof system for the Promethei 2023 Q4 MVP.
 
 
 Repo organization

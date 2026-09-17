@@ -12,7 +12,7 @@ License-files:       LICENSE-MIT
 Author:              Balazs Komuves
 Copyright:           (c) 2023 Status Research & Development GmbH, (c) 2025 SRS Durability Labs
 Maintainer:          balazs (at) status (dot) im
-Homepage:            https://github.com/durability-labs/archivist-storage-proofs-circuits
+Homepage:            https://github.com/promethei-project/nim-promethei-storage-proofs-circuits
 
 Stability:           Experimental
 Category:            Cryptography
@@ -21,7 +21,7 @@ Build-Type:          Simple
 
 source-repository head
   type:                git
-  location:            https://github.com/durability-labs/archivist-storage-proofs-circuits
+  location:            https://github.com/promethei-project/nim-promethei-storage-proofs-circuits
 
 --------------------------------------------------------------------------------
 

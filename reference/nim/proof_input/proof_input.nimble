@@ -9,6 +9,6 @@ bin           = @["cli"]
 
 requires "nim >= 1.6.0"
 requires "https://github.com/mratsim/constantine#bc3845aa492b52f7fef047503b1592e830d1a774"
-requires "https://github.com/durability-labs/nim-poseidon2#4e2c6e619b2f2859aaa4b2aed2f346ea4d0c67a3"
-requires "https://github.com/durability-labs/nim-goldilocks-hash#bd5b805b80b6005a3e5de412dec15783284d205d"
+requires "https://github.com/promethei-project/nim-poseidon2#4e2c6e619b2f2859aaa4b2aed2f346ea4d0c67a3"
+requires "https://github.com/promethei-project/nim-goldilocks-hash#bd5b805b80b6005a3e5de412dec15783284d205d"
 #requires "goldilocks_hash == 0.0.1"

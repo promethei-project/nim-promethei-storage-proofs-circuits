@@ -106,7 +106,7 @@ After that, the first real step is to create the main component:
 
 Then compile the circuit:
 
-    $ export CIRCUIT_LIBDIRS="-l../../circuit/lib -l../../circuit/poseidon2 -l../../circuit/archivist"
+    $ export CIRCUIT_LIBDIRS="-l../../circuit/lib -l../../circuit/poseidon2 -l../../circuit/promethei"
     $ circom --r1cs --wasm --O2 ${CIRCUIT_LIBDIRS} proof_main.circom
 
 ### Optionally extract the witness computation graph

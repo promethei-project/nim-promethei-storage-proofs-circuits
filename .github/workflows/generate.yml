@@ -40,7 +40,7 @@ on:
 
       ceremonyContribution:
         description: 'Input into the circuit ceremony setup'
-        default: 'Let the Archivist rock!'
+        default: 'Let the Promethei rock!'
 
 env:
   nim_version: 1.6.14
@@ -130,8 +130,8 @@ jobs:
           mkdir -p workflow/build
           cd workflow/build
           ../../reference/nim/proof_input/cli $CLI_ARGS -v --circom="proof_main.circom"
-          circom --r1cs --wasm --O2 -l../../circuit/lib -l../../circuit/poseidon2 -l../../circuit/archivist proof_main.circom
-          build-circuit proof_main.circom proof_main.bin -l../../circuit/lib -l../../circuit/poseidon2 -l../../circuit/archivist
+          circom --r1cs --wasm --O2 -l../../circuit/lib -l../../circuit/poseidon2 -l../../circuit/promethei proof_main.circom
+          build-circuit proof_main.circom proof_main.bin -l../../circuit/lib -l../../circuit/poseidon2 -l../../circuit/promethei
 
       - name: Circuit setup
         run: |
