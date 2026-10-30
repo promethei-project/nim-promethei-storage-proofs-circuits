@@ -88,7 +88,7 @@ type
     maxDepth*      : int      # maximum depth of the big merkle tree (log2 of maximum numbers of cells per slot)
     maxLog2NSlots* : int      # log2 of maximum number of slots per dataset
     cellSize*      : int      # size of the cells we prove (2048)
-    blockSize*     : int      # size of the network block (65536)
+    blockSize*     : int      # size of the network block (131072)
 
   HashConfig* = object
     field*   : FieldSelect

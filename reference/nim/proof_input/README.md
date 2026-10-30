@@ -18,7 +18,7 @@ use real data.
      -d, --depth      = <maxdepth>      : maximum depth of the slot tree (eg. 32)
      -N, --maxslots   = <maxslots>      : maximum number of slots (eg. 256)
      -c, --cellsize   = <cellSize>      : cell size in bytes (eg. 2048)
-     -b, --blocksize  = <blockSize>     : block size in bytes (eg. 65536)
+     -b, --blocksize  = <blockSize>     : block size in bytes (eg. 131072)
      -s, --nslots     = <nslots>        : number of slots in the dataset (eg. 13)
      -n, --nsamples   = <nsamples>      : number of samples we prove (eg. 100)
      -e, --entropy    = <entropy>       : external randomness (eg. 1234567)
