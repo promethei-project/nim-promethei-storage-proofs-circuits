@@ -16,7 +16,7 @@ on:
 
       blockSize:
         description: 'Block size in bytes'
-        default: '65536'
+        default: '131072'
 
       nSamples:
         description: 'Number of samples to prove'
@@ -36,7 +36,7 @@ on:
 
       nCells:
         description: 'Number of cells in this slot'
-        default: '512'
+        default: '128'
 
       ceremonyContribution:
         description: 'Input into the circuit ceremony setup'
@@ -46,7 +46,7 @@ env:
   nim_version: 1.6.14
   rust_version: 1.87.0
   nodejs_version: 18.15
-  ceremony_source: https://storage.googleapis.com/zkevm/ptau/powersOfTau28_hez_final_21.ptau
+  ceremony_source: https://circom.info/powersOfTau28_hez_final_21.ptau
   s3_bucket_path: proving-key
   circuit_file: workflow/build/proof_main.zkey
   constraints_file: workflow/build/proof_main.r1cs
@@ -92,6 +92,7 @@ jobs:
           cache-key: 'invalid-cache-please'
           crate: circom-witnesscalc
           git: https://github.com/iden3/circom-witnesscalc.git
+          tag: build-circuit/v0.1.1
 
       - name: Setup Circom-witnesscalc/build-circuit
         uses: baptiste0928/cargo-install@v3
@@ -99,6 +100,7 @@ jobs:
           cache-key: 'invalid-cache-please'
           crate: build-circuit
           git: https://github.com/iden3/circom-witnesscalc.git
+          tag: build-circuit/v0.1.1
 
       - name: Setup Nim
         uses: jiro4989/setup-nim-action@v2
@@ -163,12 +165,11 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         run: |
-          # Archive
+          # Archive (deterministic - the sha256 is the published storage key)
           mkdir archive
           mv ${{ env.circuit_file }} ${{ env.constraints_file }} ${{ env.wasm_file }} ${{ env.bin_file }} ${{ env.verification_key_file }} archive
-          tar czvf ${{ env.archive_file }} -C archive .
           # Variables
-          hash=($(shasum -a 256 ${{ env.archive_file }}))
+          hash=$(python3 workflow/make_archive.py archive ${{ env.archive_file }})
           [[ -z "${{ env.s3_bucket_path}}" ]] && storage_file="${hash}" || storage_file="${{ env.s3_bucket_path}}/${hash}"
           echo "storage_file=${storage_file}" >>$GITHUB_ENV
           # Upload

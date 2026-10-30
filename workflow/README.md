@@ -80,8 +80,15 @@ Size `2^21` (file size about 2GB) should be big enough:
     $ cd ..
     $ mkdir -p ceremony
     $ cd ceremony
-    $ wget https://storage.googleapis.com/zkevm/ptau/powersOfTau28_hez_final_21.ptau
+    $ wget https://circom.info/powersOfTau28_hez_final_21.ptau
+    $ b2sum powersOfTau28_hez_final_21.ptau
     $ cd ../workflow
+
+The ceremony file is only needed for the setup and is not redistributed with this
+repository. The expected blake2b-512 digest, also published in the snarkjs README,
+is:
+
+    9aef0573cef4ded9c4a75f148709056bf989f80dad96876aadeb6f1c6d062391f07a394a9e756d16f7eb233198d5b69407cca44594c763ab4a5b67ae73254678
 
 Note: generating this yourself will probably take quite a long time.
 

@@ -54,11 +54,11 @@ const defGlobCfg =
   GlobalConfig( maxDepth:       32
               , maxLog2NSlots:  8
               , cellSize:       2048
-              , blockSize:      65536
+              , blockSize:      131072
               )
 
 const defDSetCfg = 
-  DataSetConfig( nCells:   256
+  DataSetConfig( nCells:   128
                , nSamples: 5
                , nSlots:   11
                , dataSrc:  DataSource(kind: FakeData, seed: 12345)
@@ -87,7 +87,7 @@ proc printHelp() =
   echo " -d, --depth      = <maxdepth>      : maximum depth of the slot tree (eg. 32)"
   echo " -N, --maxslots   = <maxslots>      : maximum number of slots (eg. 256)"
   echo " -c, --cellsize   = <cellSize>      : cell size in bytes (eg. 2048)"
-  echo " -b, --blocksize  = <blockSize>     : block size in bytes (eg. 65536)"
+  echo " -b, --blocksize  = <blockSize>     : block size in bytes (eg. 131072)"
   echo " -s, --nslots     = <nslots>        : number of slots in the dataset (eg. 13)"
   echo " -n, --nsamples   = <nsamples>      : number of samples we prove (eg. 100)"
   echo " -e, --entropy    = <entropy>       : external randomness (eg. 1234567)"
