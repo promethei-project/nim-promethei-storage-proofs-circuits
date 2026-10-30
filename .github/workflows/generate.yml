@@ -163,12 +163,11 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
         run: |
-          # Archive
+          # Archive (deterministic - the sha256 is the published storage key)
           mkdir archive
           mv ${{ env.circuit_file }} ${{ env.constraints_file }} ${{ env.wasm_file }} ${{ env.bin_file }} ${{ env.verification_key_file }} archive
-          tar czvf ${{ env.archive_file }} -C archive .
           # Variables
-          hash=($(shasum -a 256 ${{ env.archive_file }}))
+          hash=$(python3 workflow/make_archive.py archive ${{ env.archive_file }})
           [[ -z "${{ env.s3_bucket_path}}" ]] && storage_file="${hash}" || storage_file="${{ env.s3_bucket_path}}/${hash}"
           echo "storage_file=${storage_file}" >>$GITHUB_ENV
           # Upload
