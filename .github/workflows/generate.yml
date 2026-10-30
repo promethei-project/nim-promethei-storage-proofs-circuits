@@ -16,7 +16,7 @@ on:
 
       blockSize:
         description: 'Block size in bytes'
-        default: '65536'
+        default: '131072'
 
       nSamples:
         description: 'Number of samples to prove'
@@ -36,7 +36,7 @@ on:
 
       nCells:
         description: 'Number of cells in this slot'
-        default: '512'
+        default: '128'
 
       ceremonyContribution:
         description: 'Input into the circuit ceremony setup'
