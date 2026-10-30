@@ -46,7 +46,7 @@ env:
   nim_version: 1.6.14
   rust_version: 1.87.0
   nodejs_version: 18.15
-  ceremony_source: https://storage.googleapis.com/zkevm/ptau/powersOfTau28_hez_final_21.ptau
+  ceremony_source: https://circom.info/powersOfTau28_hez_final_21.ptau
   s3_bucket_path: proving-key
   circuit_file: workflow/build/proof_main.zkey
   constraints_file: workflow/build/proof_main.r1cs
